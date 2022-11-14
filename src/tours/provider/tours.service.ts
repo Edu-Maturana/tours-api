@@ -2,8 +2,8 @@ import { Injectable, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { ToursEntity } from './tours.entity';
-import { ToursDTO } from './tours.dto';
+import { ToursEntity } from '../entity/tours.entity';
+import { ToursDTO } from '../dtos/tours.dto';
 
 @Injectable()
 export class ToursService {

@@ -9,8 +9,8 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 
-import { ToursService } from './tours.service';
-import { ToursDTO } from './tours.dto';
+import { ToursService } from '../provider/tours.service';
+import { ToursDTO } from '../dtos/tours.dto';
 
 @Controller('tours')
 export class ToursController {
