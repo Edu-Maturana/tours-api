@@ -32,6 +32,18 @@
 $ npm install
 ```
 
+## Environment
+
+```bash
+$ cp .example.env .env
+```
+
+## Database
+
+```bash
+$ docker-compose up -d
+```
+
 ## Running the app
 
 ```bash
