@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { ToursEntity } from './tours.entity';
-import { ToursDto } from './tours.dto';
+import { ToursDTO } from './tours.dto';
 
 @Injectable()
 export class ToursService {
@@ -17,16 +17,18 @@ export class ToursService {
   }
 
   async getOne(id: number) {
-    return await this.toursRepository.findOne({ id });
+    return await this.toursRepository.findOne({
+      where: { id },
+    });
   }
 
-  async create(data: ToursDto) {
+  async create(data: ToursDTO) {
     const tour = await this.toursRepository.create(data);
     await this.toursRepository.save(tour);
     return tour;
   }
 
-  async update(id: number, data: Partial<ToursDto>) {
+  async update(id: number, data: Partial<ToursDTO>) {
     await this.toursRepository.update({ id }, data);
     return await this.toursRepository;
   }
