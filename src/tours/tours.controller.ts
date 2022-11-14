@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 
 import { ToursService } from './tours.service';
-import { ToursDto } from './tours.dto';
+import { ToursDTO } from './tours.dto';
 
 @Controller('tours')
 export class ToursController {
@@ -33,7 +33,7 @@ export class ToursController {
   }
 
   @Post()
-  async create(@Body() data: ToursDto) {
+  async create(@Body() data: ToursDTO) {
     return {
       statusCode: HttpStatus.OK,
       data: await this.toursService.create(data),
@@ -41,7 +41,7 @@ export class ToursController {
   }
 
   @Put(':id')
-  async update(@Param('id') id: number, @Body() data: Partial<ToursDto>) {
+  async update(@Param('id') id: number, @Body() data: Partial<ToursDTO>) {
     return {
       statusCode: HttpStatus.OK,
       data: await this.toursService.update(id, data),
