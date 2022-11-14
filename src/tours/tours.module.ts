@@ -4,10 +4,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 // import { ToursService } from './tours.service';
 import { ToursEntity } from './tours.entity';
 import { ToursService } from './tours.service';
+import { ToursController } from './tours.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([ToursEntity])],
   providers: [ToursService],
+  controllers: [ToursController],
   //   controllers: [UsersController],
   //   providers: [UsersService],
 })
